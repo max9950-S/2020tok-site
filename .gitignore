@@ -1,0 +1,3 @@
+.duckdb-home/
+data/parquet/
+scripts/

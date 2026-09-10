@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#000000" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <title>2020Tok</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="brand">
+        <span class="logo">2020Tok</span>
+      </header>
+
+      <section class="stage" id="stage" aria-live="polite">
+        <div class="empty" id="empty">
+          <p class="empty-logo">2020Tok</p>
+          <span>press scroll button to start scrolling</span>
+        </div>
+        <button type="button" class="stage-hit" id="stage-hit" hidden aria-label="Pause or play video"></button>
+      </section>
+
+      <div class="stage-hud" id="stage-hud" hidden>
+        <div class="playback" id="playback">
+          <time class="video-date" id="video-date"></time>
+          <div class="progress">
+            <span class="progress-time" id="time-now">0:00</span>
+            <div
+              class="progress-track"
+              id="progress-track"
+              role="slider"
+              tabindex="0"
+              aria-label="Video position"
+              aria-valuemin="0"
+              aria-valuemax="0"
+              aria-valuenow="0"
+            >
+              <div class="progress-fill" id="progress-fill"></div>
+            </div>
+            <span class="progress-time" id="time-end">0:00</span>
+          </div>
+        </div>
+        <span class="pause-badge" id="pause-badge" hidden>Paused</span>
+      </div>
+
+      <aside class="rail" aria-label="Playback">
+        <button type="button" class="hist" id="btn-up" aria-label="Previous in history" disabled>
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+            <path d="M6 14.5 12 8l6 6.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <button type="button" class="hist" id="btn-down" aria-label="Next in history" disabled>
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+            <path d="M6 9.5 12 16l6-6.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+
+        <div class="next-slot">
+          <div class="next-face" aria-hidden="true">SCROLL</div>
+          <div class="next-wrap" id="preview-wrap">
+            <div class="preview" id="preview"></div>
+          </div>
+          <button type="button" class="next-hit" id="btn-next" aria-label="Scroll" disabled></button>
+        </div>
+      </aside>
+    </div>
+    <script src="app.js" defer></script>
+  </body>
+</html>
